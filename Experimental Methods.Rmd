@@ -1,0 +1,61 @@
+#trying to move file into RProj
+
+---
+title: "Experimental Methods"
+output:
+  html_document:
+    toc: true
+---
+
+```{r, include=FALSE}
+library(knitr)
+library(ggplot2)
+library(broom)
+#library(devtools)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Kat Adams Shannon
+
+## R Markdown Practice
+
+### 9/27/2021
+
+Tool kit for paths relative to the project root. Here's how to call files from a dynamic directory - relatibve to the project root.
+
+Start a project repository, associate it with an R project (new project in a new working directory). Then you can create a git repository if you want. The R studio session lives in this project root. This generally refer there so you do not need to specify root path. Can also use here() package - wjocj tries to figure out path/project root.
+
+use here("data/foo.csv") so do not have to use ...as a directory path.
+
+```{r example figure, fig.height=3}
+hist(mtcars$mpg)
+x <- 13
+```
+
+```{r}
+kable(head(mtcars), digits = 1)
+```
+
+Here is some text. I would like to tell you that there are `r 10+2` months in a year. And `r x` is bigger than that number.
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
