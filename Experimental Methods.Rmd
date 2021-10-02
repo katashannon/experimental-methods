@@ -48,7 +48,12 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r cars}
 summary(cars)
+mod <- lm(mpg ~ hp + cyl, data = mtcars)
+kable(tidy(mod), digits = 3)
+ts <- with(mtcars,t.test(hp[cyl==4], hp[cyl==6]))
 ```
+
+Adding stats within code `r (round(ts$parameter, 2))` # this didn't work quite right
 
 ## Including Plots
 
